@@ -1,0 +1,35 @@
+# hugin project file, version  1
+# hugin project file, version	 1
+p f0 w6017 h6017 v32  n"TIFF_m c:LZW"
+m g1 i0 f0 m0
+
+# image lines
+#-hugin  cropFactor=1
+i w4080 h4080 f0 K0a1 K0b0 K1a1 K1b0 K2a1 K2b0 Va1 Vb0 Vc0 Vd0 Vx0 Vy0 a0 b0 c0 d0 e0 g0 p0 r0 t0 v31.0866 y0  u10 n"84.jpg"
+#-hugin  cropFactor=1
+i w4116 h5903 f0 K0a1 K0b0 K1a1 K1b0 K2a1 K2b0 Va1 Vb0 Vc0 Vd0 Vx0 Vy0 a0 b0 c0 d0 e0 g0 p-0.108764 r-0.0661772 t0 v22.196 y0.309582  u10 n"84bw.jpg"
+
+
+# specify variables that should be optimized
+v v0 
+v p1 r1 v1 y1 
+v 
+
+# this is an attempt to test a comment
+
+#-hugin this is an error
+# control points
+c n0 N1 x3194 y2074 X3649 Y2985 t0
+c n0 N1 x2143 y2052 X2153 Y2952 t0
+c n0 N1 x2485 y1987 X2637 Y2862 t0
+c n0 N1 x2405 y2706 X2522 Y3873 t0
+c n0 N1 x1908 y3124 X1811 Y4471 t0
+c n0 N1 x3410 y2151 X3963 Y3098 t0
+c n0 N1 x3271 y3446 X3757 Y4933 t0
+c n0 N1 x853 y2453 X307 Y3521 t0
+c n0 N1 x1237 y3574 X842 Y5145 t0
+c n0 N1 x732 y2203 X127 Y3159 t0
+
+
+#hugin_options r0 e0
+
