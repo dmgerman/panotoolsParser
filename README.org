@@ -1,0 +1,42 @@
+Parser for panotools and hugin configuration scripts.
+
+Contents:
+
+* Usage
+* Todo
+
+
+----------------------------------------------------------------------
+USAGE:
+
+This bison/yacc parser implements a simple parser that reads a file
+and converts it into an equivalent data structure. The main function
+to use is:
+
+
+pt_script *panoParseScript(char *filename)
+
+
+It returns an allocated data structure pt_script. It should be
+disposed properly using panoParseDispose.
+
+
+void panoParseDispose(pt_script **scriptVar)
+
+
+----------------------------------------------------------------------
+TODO:
+
+* Add support for K and V variables in hugin
+
+* Create a bunch of test cases
+
+* Create an include file for internal use, and one for exports. 
+
+* Add support for en error function pointer so it can be replaced
+
+* Refactor the code to  dump the data structure into a function that
+  can be used for debugging/testing
+
+* We need a function to verify that the read values are meaningful but
+  perhaps that is outside the scope of the parser.

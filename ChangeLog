@@ -1,0 +1,135 @@
+2011-02-02    <dmg@uvic.ca>
+
+	* Fixed major problems with the scanner. It seems to be working now.
+
+2008-08-25  dmg  <dmg@phosphorus>
+
+	* .svnignore: ignore many files
+
+	* tparser.h, tparser.c, testparser.c: The parser no longer
+	allocates the parsing data structure, instead it is passed as a
+	parameter.
+
+2008-08-24  dmg  <dmg@phosphorus>
+
+	* parser.y (PT_TOKEN_STRING): Check that the gamma is >	0. 
+	huberEstimator is a float, not int
+
+2008-08-10  dmg  <dmg@uvic.ca>
+
+	* CMakeLists.txt: Changed name of library to tparser, added
+	tparser.h as a file to install
+
+2008-08-10  dmg  <dmg@uvic.ca>
+
+	* scanner.l, parser.y: Finally! properly handle end-of-input.
+
+	* CMakeLists.txt: Added GCC declaration for GCC compilation of
+	lround. It might not work on other compilers. This needs ot be fixed.
+
+	* tparser.h: Added declarations to remove warning
+
+2007-06-28  dmg  <dmg@uvic.ca>
+
+	* parser.y, tparser.c, tparser.h, scanner.l: I think I finished
+	implementing all the hugin specific parameters.
+
+	* tparser.h, tparser.h, tparser.c: Added all the variables needed
+	by Hugin, renamed some of them.
+
+	* parser.y, tparser.c, tparser.h: Implemented R variable in p-line
+	
+	* parser.y, tparser.c, tparser.h, scanner.l: Implemented Hugin
+	autoCenterCrop and cropFactor in i-lines.
+
+2007-06-27  dmg  <dmg@uvic.ca>
+
+	* parser.y, tparser.c, tparser.h, scanner.l: Implemented Ra...Re
+	variables and their references
+
+	* parser.y, tparser.c, tparser.h: implemented hugin_options
+	variables r and e.
+
+	* Removed several debugging messages to make the output cleaner.
+
+	* parser.y: Improved error handling in case of unrecognized
+	lines. Previously it was stopping at the first line it did not
+	recognized, but returned no error.
+
+	* parser.y, tparser.c, tparser.h (struct): Added parameters
+	outputPixelType and photometricHuberSigma. Added feather size (u)
+	in images lines
+
+	* scanner.l: Added token for #-hugin variables.
+	
+2007-06-14  dmg  <dmg@uvic.ca>
+
+	* parser.y (PT_TOKEN_STRING): Removed yydebug for the time being.
+
+	* tparserdebug.h (DEBUG_2): THe #else had the wrong number of parms.
+
+	* parser.y: Fixed an out-of-bounds error.
+
+	* tparserdebug.h, parser.y, tparser.c: added this file. 
+
+2007-06-09  Pablo d'Angelo  <pablo.dangelo@web.de>
+
+	* CMakeLists.txt: build a library for the parser anyway, this is
+	required for the transform wrapper. Added link to lm, required on
+	unix. I hope it still works on OSX.
+
+2007-06-06  dmg  <dmg@uvic.ca>
+
+	* CMakeLists.txt: Fixed script. At least it now creates the test executable
+
+	* Tparser.c (panoParserDumpImage): Fixed a compilation error that
+	slip through in my last commit
+
+	* Added support for reading control points.
+
+2007-05-13  dmg  <dmg@uvic.ca>
+
+	* scanner.l, parser.y: Changed PT_TOKEN_FLOAT to
+	PT_TOKEN_NUMBER. Removed PT_TOKEN_INT. Now all numbers are float,
+	but down-converted to int if necessary (using lroundf). Created a
+	new token for cropping (PT_TOKEN_CROPPING). It simplifies error messages.
+
+2007-05-03  dmg  <dmg@uvic.ca>
+
+	* parser.y (PT_TOKEN_STRING): Fixed spelling mistake in huberEstimator
+
+	* tparser.c (panoScriptParse): Fixed spelling mistake in name of parameter
+
+2007-04-18  dmg  <dmg@uvic.ca>
+
+	* tparser.c, tparser.h: Renamed some functions to the tlalli naming
+	standards.  Added functions to parse projection parameters. Added
+	functions to de-reference variables. Added a function to dump the
+	content of the script variable. Fixed some bugs. 
+
+	* tparserprivate.h: Added this file to keep any declarations that
+	are only required to by parser.
+
+	* parser.y: Clear newly allocated memory for image specs
+
+	* testparser.c: Added logic to dereference variables. Moved
+	dumping of variables to a function in tparser.c
+	
+
+2007-04-11  pablo  <pablo.dangelo@web.de>
+
+	* CMakeLists.txt, CMakeModules/FindBISON.cmake,
+	CMakeModules/FindFLEX.cmake, src/CMakeLists.txt,
+	src/parser/CMakeLists.txt: CMake based build system
+
+	* src/parser/tparser.c, src/parser/testparser.c: Moved main into a
+	separate file, build library and test program. Added panoPrintError()
+	function.
+	
+2007-04-10  dmg  <dmg@uvic.ca>
+
+	* scanner.y, parser.l, tparser.h, tparser.c, README.txt, COPYING,
+	Makefile.am, ChangeLog, AUTHORS: First commit. Iimplement a simple
+	bison/yacc parser for the panotools/hugin scripts.
+	
+
